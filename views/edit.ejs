@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Create Table</title>
+</head>
+<body>
+    <h2>Edit an old Table</h2>
+    <form action="/update/<%= record._id %>" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br>
+
+        <label for="Age">Age:</label>
+        <input type="number" id="Age" name="Age"><br>
+        
+        <label for="image">Image URL:</label>
+        <input type="text" id="image" name="image"><br>
+        
+        <label for="school">School:</label>
+        <input type="text" id="school" name="school"><br>
+        
+        <button type="submit">Edit</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Table CRUD</title>
+</head>
+<body>
+    <h2>This is table for CRUD operation</h2>
+    <form action="/create" method="GET">
+        <button type="submit">Create Table</button>
+    </form>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Image</th>
+                <th>School</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% tables.forEach((table, index) => { %>
+                <tr>
+                    <td><%= index + 1 %></td>
+                    <td><%= table.name %></td>
+                    <td><%= table.Age %></td>
+                    <td><img src="<%= table.image %>" alt="Image of <%= table.name %>" width="100"></td>
+                    <td><%= table.school %></td>
+                    <td>
+                     
+                        <a href="/edit/<%= table._id %>">Edit</a>
+                        <form action="/delete/<%= table._id %>" method="POST" style="display:inline;">
+                            <button type="submit" onclick="return confirm('Are you sure you want to delete this record?')">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>
