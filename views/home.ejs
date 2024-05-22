@@ -11,7 +11,6 @@
     <form action="/create" method="GET">
         <button type="submit">Create Table</button>
     </form>
-    
     <table>
         <thead>
             <tr>
@@ -33,7 +32,7 @@
                     <td><%= table.school %></td>
                     <td>
                      
-                        <a href="/edit/<%= table._id %>">Edit</a>
+                        <button><a href="/edit/<%= table._id %>">Edit</a></button>
                         <form action="/delete/<%= table._id %>" method="POST" style="display:inline;">
                             <button type="submit" onclick="return confirm('Are you sure you want to delete this record?')">Delete</button>
                         </form>
